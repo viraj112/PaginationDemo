@@ -18,10 +18,11 @@
         android:theme="@style/Theme.PaginationDemo"
         tools:targetApi="31">
         <activity
+            android:name=".FlowApiActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.BiometricActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".view.MainActivity"
             android:exported="true">
@@ -31,7 +32,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             />
-
         </activity>
     </application>
 

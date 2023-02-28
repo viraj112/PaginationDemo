@@ -16,7 +16,7 @@ class RetrofitModule {
     @Singleton
     @Provides
     fun getRetrofit(): Retrofit {
-        return Retrofit.Builder().baseUrl(BASE_URL)
+        return Retrofit.Builder().baseUrl("https://jsonplaceholder.typicode.com/")
             .addConverterFactory(GsonConverterFactory.create()).build()
     }
 
