@@ -18,4 +18,6 @@ class DatabaseModule {
     fun provideDatabase(@ApplicationContext context: Context) : QuoteDatabase{
         return Room.databaseBuilder(context, QuoteDatabase::class.java, "quoteDB").build()
     }
+
+
 }

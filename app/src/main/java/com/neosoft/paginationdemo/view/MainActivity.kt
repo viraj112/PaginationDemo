@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity(),QuotePagingAdapter.CellClickListener {
 
     override fun onCellClickListener(item: Result?) {
         clipboardManager.setPrimaryClip(ClipData.newPlainText("Content",item?.content))
-        Toast.makeText(this,"Copied to clipboard",Toast.LENGTH_SHORT).show()
+        Toast.makeText(this,"Copied to clipboard"+item?.author,Toast.LENGTH_SHORT).show()
 
 
 
