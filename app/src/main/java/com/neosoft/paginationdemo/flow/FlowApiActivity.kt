@@ -68,12 +68,12 @@ class FlowApiActivity : AppCompatActivity() {
 
     }
 
-   /* fun getData(): Flow<Int> = flow {
+    fun getData(): Flow<Int> = flow {
         for (i in 1..5) {
             delay(1000)
             emit(i)
         }
-    }.flowOn(Dispatchers.IO)*/
+    }.flowOn(Dispatchers.IO)
    private fun initUi() {
        recyclerView=findViewById(R.id.recyclerView)
        postAdapter= PostAdapter(this, ArrayList())
