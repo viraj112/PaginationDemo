@@ -1,4 +1,4 @@
 package com.neosoft.paginationdemo.model
 
-data class Post(val body:String) {
+data class Post(val body:String,val url:String) {
 }

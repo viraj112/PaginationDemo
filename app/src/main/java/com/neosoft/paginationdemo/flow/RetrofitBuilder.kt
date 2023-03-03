@@ -12,6 +12,7 @@ object RetrofitBuilder {
             .baseUrl("https://jsonplaceholder.typicode.com/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
+
     }
     val api:QuoteApi by lazy {
         retrofit.create(QuoteApi::class.java)

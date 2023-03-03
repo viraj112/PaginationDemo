@@ -6,7 +6,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.neosoft.paginationdemo.model.Post
 import com.neosoft.paginationdemo.repository.PostRepository
-import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 
 class PostViewModel(private val postRepository: PostRepository) : ViewModel() {
@@ -14,15 +15,17 @@ class PostViewModel(private val postRepository: PostRepository) : ViewModel() {
     val postData: MutableLiveData<List<Post>> = MutableLiveData()
 
     /*  way 1 */
-    fun getPost()
-    {
+    fun getPost() {
         viewModelScope.launch {
+
             postRepository.getPost()
-                .catch { e->
+                .catch { e ->
                     Log.d("main", "getPost: ${e.message}")
                 }
-                .collect {postData1->
-                    postData.value=postData1
+                .collect {
+                        postData1 ->
+                    delay(1000)
+                    postData.postValue(postData1)
                 }
         }
     }
