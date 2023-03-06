@@ -1,0 +1,20 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="materialdesign.sriyank.com.MainActivity">
+
+    <item android:id="@+id/simple_snackbar"
+        android:orderInCategory="100"
+        android:title="Simple"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/snackbar_action_callback"
+        android:orderInCategory="100"
+        android:title="Action"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/custom_sackbar"
+        android:orderInCategory="100"
+        android:title="Styled"
+        app:showAsAction="never"/>
+</menu>
