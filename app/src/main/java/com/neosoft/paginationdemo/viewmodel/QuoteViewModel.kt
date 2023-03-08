@@ -19,7 +19,6 @@ class QuoteViewModel @Inject constructor(private val repository: QuoteRepository
     val list = repository.getQuotes().cachedIn(viewModelScope)
     val postData: MutableLiveData<List<Post>> = MutableLiveData()
 
-    /*  way 1 */
     fun getPost()
     {
         viewModelScope.launch {

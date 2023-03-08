@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.flowOn
 
 class PostRepository {
 
-    fun getPost() : Flow<List<Post>> = flow {
+    fun    getPost() : Flow<List<Post>> = flow {
         val postList=RetrofitBuilder.api.getPost()
         emit(postList)
     }.flowOn(Dispatchers.IO)

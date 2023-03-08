@@ -9,7 +9,6 @@ import com.neosoft.paginationdemo.model.Result
 
 @Database(entities = [Result::class, QuoteRemoteKeys::class], version = 1)
 abstract class QuoteDatabase : RoomDatabase() {
-
     abstract fun quoteDao() : QuoteDao
     abstract fun remoteKeysDao() : RemoteKeysDao
 }
