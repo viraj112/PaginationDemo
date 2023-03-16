@@ -23,7 +23,6 @@ class CoroutinesRepository {
                 Log.e("calling", "await")
                 val animals = animalsResponse.await()
                 result(humans, animals)
-
             }
 
 
@@ -37,7 +36,7 @@ class CoroutinesRepository {
 
     }
 
-    suspend fun getHumans(): List<Human> {
+    suspend fun   getHumans(): List<Human> {
 
         val list = mutableListOf<Human>()
         for (i in 1..10) {

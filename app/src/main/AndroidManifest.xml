@@ -5,6 +5,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
 
     <application
         android:name=".MyApplication"
@@ -18,7 +19,7 @@
         android:theme="@style/Theme.PaginationDemo"
         tools:targetApi="31">
         <activity
-            android:name=".coroutines.CoroutinesActivity"
+            android:name=".WorkManagerActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,13 +28,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".download.DownloadManagerActivity"
+            android:name=".coroutines.CoroutinesActivity"
             android:exported="true">
 
         </activity>
         <activity
-            android:name=".view.CordinatorActivity"
+            android:name=".download.DownloadManagerActivity"
             android:exported="true"></activity>
+        <activity
+            android:name=".view.CordinatorActivity"
+            android:exported="true" />
         <activity
             android:name=".flow.FlowApiActivity"
             android:exported="true" />
@@ -45,6 +49,16 @@
             android:exported="true">
             />
         </activity>
+        <receiver
+            android:name=".MyReceiver"
+            android:enabled="true"
+            android:exported="false"></receiver>
+
+        <service
+            android:name=".MyService"
+            android:enabled="true"
+            android:exported="true" />
+
     </application>
 
 </manifest>

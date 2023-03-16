@@ -27,7 +27,7 @@ class CordinatorActivity : AppCompatActivity() {
         )
         binding.toolbar.setOnMenuItemClickListener(object :OnMenuItemClickListener,
             Toolbar.OnMenuItemClickListener {
-            override fun onMenuItemClick(item: MenuItem?): Boolean {
+            override fun onMenuItemClick(item: MenuItem): Boolean {
 
                 when (item?.getItemId()) {
                     com.neosoft.paginationdemo.R.id.simple_snackbar -> showSimpleSnackBar()
@@ -36,6 +36,8 @@ class CordinatorActivity : AppCompatActivity() {
                 }
                 return false
                }
+
+
 
 
         })
