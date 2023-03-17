@@ -20,6 +20,17 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textColor="#000000" />
+        <Button
+            android:id="@+id/shareData"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Share Alarm Data" />
 
+        <ImageView
+            android:id="@+id/imgProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_launcher_foreground"
+            android:layout_gravity="center"/>
     </LinearLayout>
 </layout>

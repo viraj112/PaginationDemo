@@ -5,13 +5,18 @@ import android.app.PendingIntent
 import android.app.TimePickerDialog
 import android.content.Context
 import android.content.Intent
-import android.content.IntentFilter
+import android.graphics.Bitmap
+import android.graphics.drawable.BitmapDrawable
+import android.graphics.drawable.Drawable
+import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.graphics.drawable.toBitmap
 import androidx.databinding.DataBindingUtil
-import com.neosoft.paginationdemo.MyReceiver
 import com.neosoft.paginationdemo.R
 import com.neosoft.paginationdemo.databinding.ActivityAlarmManagerBinding
+import java.io.ByteArrayOutputStream
 import java.util.*
 import android.app.TimePickerDialog.OnTimeSetListener as OnTimeSetListener1
 
@@ -31,6 +36,21 @@ class AlarmManagerActivity : AppCompatActivity() {
         binding.startAlaram.setOnClickListener {
             binding.alarmprompt.text = ""
             openTimePickerDialog(false)
+        }
+        binding.shareData.setOnClickListener {
+            val shareIntent = Intent(Intent.ACTION_SEND)
+            val bitmap = binding.imgProfile.drawable.toBitmap() // your imageView here.
+            val bytes = ByteArrayOutputStream()
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bytes)
+            val path = MediaStore.Images.Media.insertImage(this.contentResolver, bitmap, "tempimage", null)
+            val uri = Uri.parse(path)
+            val body = binding.alarmprompt.text.toString()
+            //shareIntent.type="text/plain"
+            shareIntent.type = "image/*"
+            shareIntent.putExtra(Intent.EXTRA_STREAM, uri)
+            shareIntent.putExtra(Intent.EXTRA_SUBJECT,"Demo")
+            shareIntent.putExtra(Intent.EXTRA_TEXT,body)
+            startActivity(Intent.createChooser(shareIntent,"Share using"))
         }
 
     }
