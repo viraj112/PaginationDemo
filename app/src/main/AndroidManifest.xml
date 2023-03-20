@@ -19,8 +19,8 @@
         android:theme="@style/Theme.PaginationDemo"
         tools:targetApi="31">
         <activity
-            android:name=".alarmmanager.AlarmManagerActivity"
-            android:exported="true">
+            android:name=".roomdatabase.RoomDatabaseActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,13 +28,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".WorkManagerActivity"
+            android:name=".alarmmanager.AlarmManagerActivity"
             android:exported="true">
 
         </activity>
         <activity
-            android:name=".coroutines.CoroutinesActivity"
+            android:name=".WorkManagerActivity"
             android:exported="true"></activity>
+        <activity
+            android:name=".coroutines.CoroutinesActivity"
+            android:exported="true" />
         <activity
             android:name=".download.DownloadManagerActivity"
             android:exported="true" />
@@ -50,20 +53,20 @@
         <activity
             android:name=".view.MainActivity"
             android:exported="true">
-            /></activity>
-
-<!--        <receiver-->
-<!--            android:name=".MyReceiver"-->
-<!--            android:enabled="true"-->
-<!--            android:exported="false" />-->
-
+            />
+        </activity> <!-- <receiver -->
+        <!-- android:name=".MyReceiver" -->
+        <!-- android:enabled="true" -->
+        <!-- android:exported="false" /> -->
         <service
             android:name=".MyService"
             android:enabled="true"
             android:exported="true" />
-        <receiver android:name=".alarmmanager.AlarmReceiver"
-            android:exported="true"
-            android:enabled="true"/>
+
+        <receiver
+            android:name=".alarmmanager.AlarmReceiver"
+            android:enabled="true"
+            android:exported="true" />
     </application>
 
 </manifest>
