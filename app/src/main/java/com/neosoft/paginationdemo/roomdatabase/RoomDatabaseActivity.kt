@@ -29,4 +29,10 @@ class RoomDatabaseActivity : AppCompatActivity() {
             Log.d("DEMO", "getData: ${it.toString()}")
         }
     }
+
+/*
+    String value = "http://www.example.com";
+    Intent updateIntent = new Intent(Intent.ACTION_VIEW,
+    Uri.parse(value.replace("https", "http"));
+    context.startActivity(updateIntent);*/
 }

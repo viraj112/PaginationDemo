@@ -22,7 +22,6 @@ abstract class ContactDatabase : RoomDatabase() {
 
         @Volatile
         private var INSTANCE: ContactDatabase? = null
-
         fun getDatabase(context: Context): ContactDatabase {
             if (INSTANCE == null) {
                 synchronized(this) {
